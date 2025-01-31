@@ -1,0 +1,261 @@
+
+
+
+def q1():
+    name=input("enter name ")
+    age=input("enter age")
+    print(f"hello {name} with age{age}")
+    return
+
+def q2():
+    try:
+        val=int(input("enter number"))
+        print("type is int")
+    except:
+        print("type is a float.")
+    return
+
+def q3():
+    array=["a","j","h","y","g","5"]
+
+
+    
+    choice=int(input("0 to append and 1 to remove item"))
+    if choice==0:
+        array.append("k")
+    
+        print(f"{array}")
+
+    if choice==1:
+        array.remove("h")
+    
+        print(f"{array}")
+    
+    for i in range (0,len(array)):
+        if array[i]>='a' and array[i]<='z':
+            array[i]=array[i].upper()
+
+    print(f"{array}")
+    return
+
+def q4():
+    array = (10,"integer",True)
+    val,typ = array[:2] 
+    print(f"value at tuple1 is{val} and type {typ}")
+    
+    return
+
+
+def q5():
+    thisdict =	{
+    "name": {"ali","amir","choco","fawwaz"},
+    "grades": {"A","B","C","D"}
+    }
+    print(thisdict)
+    return
+
+
+def q6():
+    array1=input("enter values for list 1 ")
+    array2=input("enter values for list 2 ")
+
+    l1=array1.split(" ")
+    l2=array2.split(" ")
+    a=set(l1)
+    b=set(l2)
+    u=a.union(b)
+    print(f"union = {u}")
+
+    u=a.intersection(b)
+    print(f"intersect = {u}")
+
+    u=a.difference(b)
+    print(f"diff= {u}")
+    return
+
+def q7():
+    val=input("enter number")
+    if val>0:
+        print("positive")
+    else if :
+        print("negative")
+    else :
+        print("zero")
+    if val%2==0:
+        print("even")
+    else :
+        print("odd")
+        return
+
+def q8():
+    for val in range (1,50):
+        
+        if val%3==0 and val%5==0:
+            print(f"{val}=FIZZBUZZ")
+        elif val%3==0:
+            print(f"{val}=FIZZ")
+        elif val%5==0 :
+            print(f"{val}=BUZZ")
+    return
+
+
+
+
+
+   
+    
+
+def q9():
+    val=int(input("enter val"))
+    if val < 0:
+        return
+    for i in range(1, val + 1):
+        ans=ans*i
+    print(result)
+    return
+
+def q10():
+    val=int(input("enter val"))
+    num=val
+    if val%2==1:
+        val=val-1
+    for i in range(2, int(val/2)):
+        if num % i == 0:
+            print("not prime")
+            return 
+    print("prime")
+    return
+
+
+def q11():
+    vals=[1,4,6,8,6]
+    nvals=[]
+    for i in vals:
+        nvals.append(i*i)
+    print(nvals)
+    return
+
+
+def q12():
+    dict1 = {"cars":"civic"}
+    dict2={"bike":"honda"}
+    dict1.update(dict2)  
+    print(dict1)
+    return
+
+
+
+def q13():
+    lists=(input("enter vals"))
+    a1=lists.split(" ")
+    a2=[]
+    
+    for i in a1:
+        if i not in a2:
+            a2.append(i)
+    print(a2)
+    return
+
+    
+def q14():
+    string=input("enter string")
+    p= ''.join(string.split()).upper()
+    
+    if p==p[::-1]:
+        print("palindrome")
+    else:
+        print("not palindrome")
+    return
+
+
+
+def q15():
+    n=int(input("enter n"))
+    
+    current=1
+    prev=0
+
+    print("0")
+        
+    for i in range(0,n-1):
+        print(current)
+        temp=current
+        current=current+prev
+        prev=temp     
+    return
+
+def q16():
+    lists = []
+    print("enter -1 to exit")
+    while True:
+        val=float(input("Enter a number: "))
+        
+        if val==-1: 
+            break
+        lists.append(val)
+    avg=sum(lists)/len(lists)
+    print(avg)
+    
+    return
+
+def q17():
+    for i in range (1,11):
+        for j in range (1,11):
+            print(f"{i}*{j}={i*j}")
+    return
+
+def q18():
+    reginfo={}
+    while True:
+        choice=input("enter r to register and l to login and e to exit")
+        if choice =='e' :
+            break
+        if choice=='r':
+            name = input("Enter username")
+            if name in reginfo:
+                print("User alredy exists")
+                return
+            else:
+                password = input("Enter  password: ")
+                reginfo[name] = password
+                print("registeration  successfully")
+        elif choice=='l':
+            name = input("Enter your username: ")
+            password = input("Enter your password: ")
+    
+            if name in reginfo:
+                if reginfo[name] == password:
+                    print(f"Welcome back")
+                else:
+                    print("incorrect password")
+            else:
+                print("Invalid username or password.")
+        else :
+            print ("invalid choice")
+    return
+
+
+def q19():
+    words = ['brother', 'games', 'Fawwaz', 'choco','games']
+    count = {}  
+    for word in words:  
+        if word not in count:  
+            count[word]=1
+        else:
+            count[word]=count[word]+ 1 
+    print(count)
+    return 
+
+def q20():
+    choice = input("enter c for celcus and f for farenheit conversion")
+    val = float(input("Enter temperature: "))
+    if choice == 'c':
+        val = (val - 32) * 5/9
+        print(f"temperature in celcius={val}")
+       
+    elif choice == 'f':
+        val = (val * 9/5) +32
+        print(f"temperature in farenheit={val}")
+        
+    else:
+        print("Invalid choice!")
